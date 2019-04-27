@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
 
     let segments = this.getUrlSegments();
     let languageIndex = segments.findIndex(s => s === this.currentLanguage.toLowerCase());
-    segments[languageIndex] = language;
+    segments[languageIndex] = language.toLowerCase();
     let url = segments.join('/');
     window.location.href = url;
   }
