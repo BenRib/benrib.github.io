@@ -27,19 +27,26 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
           },
           "configurations": {
-            "production": {
+            "production-en": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "outputPath": "dist/en/",
+              "baseHref": "/en/",
+              "i18nFile": "src/locale/messages.xlf",
+              "i18nFormat": "xlf2",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -56,17 +63,67 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "production-fr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputPath": "dist/fr/",
+              "baseHref": "/fr/",
+              "i18nFile": "src/locale/messages.fr.xlf",
+              "i18nFormat": "xlf2",
+              "i18nLocale": "fr",
+              "i18nMissingTranslation": "error",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "en": {
+              "aot": true,
+              "outputPath": "dist/en/",
+              "baseHref": "/en/",
+              "i18nLocale": "en"
+            },
+            "fr": {
+              "aot": true,
+              "outputPath": "dist/fr/",
+              "baseHref": "/fr/",
+              "i18nFile": "src/locale/messages.fr.xlf",
+              "i18nFormat": "xlf2",
+              "i18nLocale": "fr"
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "quai-des-arts:build"
+            "browserTarget": "quai-des-arts:build:en"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "quai-des-arts:build:production"
+            "production-en": {
+              "browserTarget": "quai-des-arts:build:production-en"
+            },
+            "production-fr": {
+              "browserTarget": "quai-des-arts:build:production-fr"
+            },
+            "fr": {
+              "browserTarget": "quai-des-arts:build:fr"
             }
           }
         },
@@ -84,6 +141,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": [],

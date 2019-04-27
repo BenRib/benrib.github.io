@@ -1,0 +1,12 @@
+<mat-card routerLink="{{occasion.id}}" class="clickable">
+  <mat-card-header>
+    <mat-card-title>{{occasion.name}}</mat-card-title>
+    <mat-card-subtitle>{{occasion.start | date:'short'}} - {{occasion.finish | date:'short'}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="occasion.imageSource">
+  <mat-card-content>
+    <p>
+      {{occasion.description}}
+    </p>
+  </mat-card-content>
+</mat-card>

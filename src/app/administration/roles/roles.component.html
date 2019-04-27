@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-content>
+    <div class="row" *ngIf="isInitCompleted">
+      <div class="col-sm-6 col-md-3 col-lg-2">
+        <div class="permission-row">Permission/Role</div>
+        <div class="permission-row" *ngFor="let permission of permissions">
+          <span>{{permission}}</span>
+        </div>
+      </div>
+
+      <div class="row col-sm-6 col-md-9 col-lg-10">
+        <div *ngFor="let role of roles; let i = index;" class="row">
+          <div class="col-auto">
+            <div class="role-row">
+              <span class="clickable" matTooltip="{{role.description}}" matTooltipPosition="left"
+                (click)="updateRole(role)">{{role.name}}</span>
+            </div>
+            <div class="role-row" *ngFor="let permission of permissions; let j = index;">
+              <mat-checkbox [checked]="true"></mat-checkbox>
+            </div>
+            <div class="role-row">
+              <button mat-icon-button (click)="deleteRole(role)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div class="col-auto">
+            <button mat-icon-button *ngIf="i === roles.length - 1" (click)="addRole()">
+              <mat-icon>add</mat-icon>
+            </button></div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

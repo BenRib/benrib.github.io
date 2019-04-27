@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file original="ng.template" id="ngi18n">
+    <unit id="menu-home">
+      <notes>
+        <note category="location">app/menu/menu.component.html:2</note>
+      </notes>
+      <segment>
+        <source>Home</source>
+        <target>Accueil</target>
+      </segment>
+    </unit>
+    <unit id="menu-gallery">
+      <notes>
+        <note category="location">app/menu/menu.component.html:3</note>
+      </notes>
+      <segment>
+        <source>Gallery</source>
+        <target>Gallerie</target>
+      </segment>
+    </unit>
+    <unit id="menu-organization">
+      <notes>
+        <note category="location">app/menu/menu.component.html:5</note>
+      </notes>
+      <segment>
+        <source>Organization</source>
+        <target>Organisation</target>
+      </segment>
+    </unit>
+    <unit id="menu-administration">
+      <notes>
+        <note category="location">app/menu/menu.component.html:7</note>
+      </notes>
+      <segment>
+        <source>Administration</source>
+        <target>Administration</target>
+      </segment>
+    </unit>
+    <unit id="menu-occasions">
+      <notes>
+        <note category="location">app/menu/menu.component.html:9</note>
+      </notes>
+      <segment>
+        <source>Occasions</source>
+        <target>Editions</target>
+      </segment>
+    </unit>
+    <unit id="menu-exhibitors">
+      <notes>
+        <note category="location">app/menu/menu.component.html:10</note>
+      </notes>
+      <segment>
+        <source>Exhibitors</source>
+        <target>Exposants</target>
+      </segment>
+    </unit>
+    <unit id="menu-roles">
+      <notes>
+        <note category="location">app/menu/menu.component.html:11</note>
+      </notes>
+      <segment>
+        <source>Roles</source>
+        <target>Rôles</target>
+      </segment>
+    </unit>
+    <unit id="menu-users">
+      <notes>
+        <note category="location">app/menu/menu.component.html:12</note>
+      </notes>
+      <segment>
+        <source>Users</source>
+        <target>Utilisateurs</target>
+      </segment>
+    </unit>
+    <unit id="welcomeMessage">
+      <notes>
+        <note category="description">application&apos;s welcome message</note>
+        <note category="location">app/home/home.component.html:3,5</note>
+      </notes>
+      <segment>
+        <source>Welcome to the Quai des Arts!</source>
+        <target>Bienvenue au Quai des Arts !</target>
+      </segment>
+    </unit>
+    <unit id="home-nextOccasion">
+      <notes>
+        <note category="location">app/home/home.component.html:13</note>
+      </notes>
+      <segment>
+        <source>Next occasion on</source>
+        <target>Prochaine édition le</target>
+      </segment>
+    </unit>
+    <unit id="countdown-days">
+      <notes>
+        <note category="location">app/home/home.component.html:28</note>
+      </notes>
+      <segment>
+        <source>Days</source>
+        <target>Jours</target>
+      </segment>
+    </unit>
+    <unit id="countdown-hours">
+      <notes>
+        <note category="location">app/home/home.component.html:40</note>
+      </notes>
+      <segment>
+        <source>Hours</source>
+        <target>Heures</target>
+      </segment>
+    </unit>
+    <unit id="countdown-minutes">
+      <notes>
+        <note category="location">app/home/home.component.html:52</note>
+      </notes>
+      <segment>
+        <source>Minutes</source>
+        <target>Minutes</target>
+      </segment>
+    </unit>
+    <unit id="countdown-seconds">
+      <notes>
+        <note category="location">app/home/home.component.html:64</note>
+      </notes>
+      <segment>
+        <source>Seconds</source>
+        <target>Secondes</target>
+      </segment>
+    </unit>
+    <unit id="occasion-name">
+      <notes>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:9</note>
+      </notes>
+      <segment>
+        <source>Name</source>
+        <target>Nom</target>
+      </segment>
+    </unit>
+    <unit id="errorMessage-required">
+      <notes>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:11</note>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:22</note>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:33</note>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:42</note>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:51</note>
+        <note category="location">app/administration/exhibitors/exhibitor-detail/exhibitor-detail.component.html:9</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:10</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:19</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:32</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:40</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:51</note>
+        <note category="location">app/organization/occasion/occasion.component.html:27</note>
+        <note category="location">app/organization/occasion/occasion.component.html:43</note>
+      </notes>
+      <segment>
+        <source>Required information</source>
+        <target>Information requise</target>
+      </segment>
+    </unit>
+    <unit id="occasion-start">
+      <notes>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:17</note>
+      </notes>
+      <segment>
+        <source>Start</source>
+        <target>Début</target>
+      </segment>
+    </unit>
+    <unit id="occasion-finish">
+      <notes>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:28</note>
+      </notes>
+      <segment>
+        <source>Finish</source>
+        <target>Fin</target>
+      </segment>
+    </unit>
+    <unit id="occasion-imageSource">
+      <notes>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:39</note>
+      </notes>
+      <segment>
+        <source>Image link</source>
+        <target>Lien de l'image</target>
+      </segment>
+    </unit>
+    <unit id="occasion-numberOfSpots">
+      <notes>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:48</note>
+      </notes>
+      <segment>
+        <source>Number of spots</source>
+        <target>Nombre d'emplacements</target>
+      </segment>
+    </unit>
+    <unit id="occasion-description">
+      <notes>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:57</note>
+      </notes>
+      <segment>
+        <source>Description</source>
+        <target>Description</target>
+      </segment>
+    </unit>
+    <unit id="occasion-information">
+      <notes>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:5</note>
+      </notes>
+      <segment>
+        <source>Information</source>
+        <target>Information</target>
+      </segment>
+    </unit>
+    <unit id="occasion-blueprint">
+      <notes>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:75</note>
+      </notes>
+      <segment>
+        <source>Blueprint</source>
+        <target>Plan</target>
+      </segment>
+    </unit>
+    <unit id="list-filter">
+      <notes>
+        <note category="location">app/administration/exhibitors/exhibitors.component.html:6</note>
+        <note category="location">app/administration/users/users.component.html:6</note>
+      </notes>
+      <segment>
+        <source>Filter</source>
+        <target>Filtre</target>
+      </segment>
+    </unit>
+    <unit id="exhibitor-name">
+      <notes>
+        <note category="location">app/administration/exhibitors/exhibitor-detail/exhibitor-detail.component.html:7</note>
+      </notes>
+      <segment>
+        <source>Name</source>
+        <target>Nom</target>
+      </segment>
+    </unit>
+    <unit id="exhibitor-isActive">
+      <notes>
+        <note category="location">app/administration/exhibitors/exhibitor-detail/exhibitor-detail.component.html:14</note>
+      </notes>
+      <segment>
+        <source>Active</source>
+        <target>Actif</target>
+      </segment>
+    </unit>
+    <unit id="user-firstName">
+      <notes>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:7</note>
+      </notes>
+      <segment>
+        <source>First Name</source>
+        <target>Prénom</target>
+      </segment>
+    </unit>
+    <unit id="user-lastName">
+      <notes>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:16</note>
+      </notes>
+      <segment>
+        <source>Last Name</source>
+        <target>Nom</target>
+      </segment>
+    </unit>
+    <unit id="user-role">
+      <notes>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:25</note>
+      </notes>
+      <segment>
+        <source>Role</source>
+        <target>Rôle</target>
+      </segment>
+    </unit>
+    <unit id="user-email">
+      <notes>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:38</note>
+      </notes>
+      <segment>
+        <source>Email</source>
+        <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="errorMessage-email">
+      <notes>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:43</note>
+      </notes>
+      <segment>
+        <source>Invalid email address</source>
+        <target>Adresse email invalide</target>
+      </segment>
+    </unit>
+    <unit id="user-login">
+      <notes>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:49</note>
+      </notes>
+      <segment>
+        <source>Login</source>
+        <target>Login</target>
+      </segment>
+    </unit>
+    <unit id="user-isActive">
+      <notes>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:56</note>
+      </notes>
+      <segment>
+        <source>Active</source>
+        <target>Actif</target>
+      </segment>
+    </unit>
+    <unit id="message-confirmation-title">
+      <notes>
+        <note category="location">app/dialog/dialog-messages/dialog-messages.component.html:1,2</note>
+      </notes>
+      <segment>
+        <source>Confirmation Required</source>
+        <target>Confirmation Requise</target>
+      </segment>
+    </unit>
+    <unit id="message-confirmation-title-delete">
+      <notes>
+        <note category="location">app/dialog/dialog-messages/dialog-messages.component.html:3,4</note>
+      </notes>
+      <segment>
+        <source>Delete Confirmation</source>
+        <target>Confirmation Suppression</target>
+      </segment>
+    </unit>
+    <unit id="message-delete-role">
+      <notes>
+        <note category="location">app/dialog/dialog-messages/dialog-messages.component.html:5,6</note>
+      </notes>
+      <segment>
+        <source>Do you want to delete that role?</source>
+        <target>Voulez-vous supprimer ce rôle?</target>
+      </segment>
+    </unit>
+    <unit id="message-delete-occasion">
+      <notes>
+        <note category="location">app/dialog/dialog-messages/dialog-messages.component.html:7,8</note>
+      </notes>
+      <segment>
+        <source>Do you want to delete that occasion?</source>
+        <target>Voulez-vous supprimer cette édition?</target>
+      </segment>
+    </unit>
+    <unit id="message-delete-exhibitor">
+      <notes>
+        <note category="location">app/dialog/dialog-messages/dialog-messages.component.html:9,10</note>
+      </notes>
+      <segment>
+        <source>Do you want to delete that exhibitor?</source>
+        <target>Voulez-vous supprimer cet exposant?</target>
+      </segment>
+    </unit>
+    <unit id="message-delete-user">
+      <notes>
+        <note category="location">app/dialog/dialog-messages/dialog-messages.component.html:11,12</note>
+      </notes>
+      <segment>
+        <source>Do you want to delete that user?</source>
+        <target>Voulez-vous supprimer cet utilisateur?</target>
+      </segment>
+    </unit>
+    <unit id="message-role-name">
+      <notes>
+        <note category="location">app/dialog/dialog-messages/dialog-messages.component.html:13</note>
+      </notes>
+      <segment>
+        <source>Role Name</source>
+        <target>Nom du Rôle</target>
+      </segment>
+    </unit>
+    <unit id="message-add-role">
+      <notes>
+        <note category="location">app/dialog/dialog-messages/dialog-messages.component.html:14</note>
+      </notes>
+      <segment>
+        <source>Add Role</source>
+        <target>Nouveau Rôle</target>
+      </segment>
+    </unit>
+    <unit id="message-update-role">
+      <notes>
+        <note category="location">app/dialog/dialog-messages/dialog-messages.component.html:15</note>
+      </notes>
+      <segment>
+        <source>Update Role</source>
+        <target>Mise à jour Rôle</target>
+      </segment>
+    </unit>
+    <unit id="organization-spot">
+      <notes>
+        <note category="location">app/organization/occasion/occasion.component.html:21</note>
+      </notes>
+      <segment>
+        <source>Spot</source>
+        <target>Emplacement</target>
+      </segment>
+    </unit>
+    <unit id="organization-exhibitor">
+      <notes>
+        <note category="location">app/organization/occasion/occasion.component.html:36</note>
+      </notes>
+      <segment>
+        <source>Exhibitor</source>
+        <target>Exposant</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

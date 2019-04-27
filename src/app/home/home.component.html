@@ -1,0 +1,76 @@
+<div class="row align-items-center header">
+  <div class="col-12">
+    <h1 i18n="application's welcome message@@welcomeMessage">
+      Welcome to the Quai des Arts!
+    </h1>
+  </div>
+</div>
+<div class="row justify-content-sm-center">
+  <div class="col-12 col-md-8">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <ng-container i18n="@@home-nextOccasion">Next occasion on</ng-container><br />
+          {{nextOccasion.start | date:'fullDate'}}
+        </mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>
+<div class="row justify-content-sm-center">
+  <div class="col-12 col-md-2">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          {{this.remainingDays}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          <ng-container i18n="@@countdown-days">Days</ng-container>
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+  <div class="col-12 col-md-2">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          {{this.remainingHours}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          <ng-container i18n="@@countdown-hours">Hours</ng-container>
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+  <div class="col-12 col-md-2">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          {{this.remainingMinutes}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          <ng-container i18n="@@countdown-minutes">Minutes</ng-container>
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+  <div class="col-12 col-md-2">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          {{this.remainingSeconds}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          <ng-container i18n="@@countdown-seconds">Seconds</ng-container>
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>
+<div class="row justify-content-sm-center">
+  <div class="col-12 col-md-8 m-s-top">
+    <agm-map [latitude]="48.574507" [longitude]="7.758797" [zoom]="16" [streetViewControl]="false">
+      <agm-marker [latitude]="48.574507" [longitude]="7.758797"></agm-marker>
+    </agm-map>
+  </div>
+</div>

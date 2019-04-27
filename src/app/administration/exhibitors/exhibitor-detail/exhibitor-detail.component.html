@@ -1,0 +1,30 @@
+<form [formGroup]="exhibitorForm" (ngSubmit)="save(exhibitorForm.value)">
+  <mat-card>
+    <mat-card-content>
+      <div class="row col-12">
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <mat-form-field>
+            <input matInput i18n-placeholder="@@exhibitor-name" placeholder="Name" formControlName="name" required>
+            <mat-error *ngIf="exhibitorForm.controls['name'].hasError('required')">
+              <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <mat-checkbox i18n="@@exhibitor-isActive" formControlName="isActive">Active</mat-checkbox>
+        </div>
+      </div>
+      <div class="row col-12">
+        <button mat-button type="submit" [disabled]="exhibitorForm.pristine || !exhibitorForm.valid">
+          <mat-icon>save</mat-icon>
+        </button>
+        <button mat-button type="reset" (click)="cancel()">
+          <mat-icon>cancel</mat-icon>
+        </button>
+        <button *ngIf="exhibitorForm.value.id !== null" mat-button type="button" (click)="delete(exhibitorForm.value)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

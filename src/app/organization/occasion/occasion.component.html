@@ -1,0 +1,72 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <div class="row">
+        <div class="col">
+          {{occasion.name}}
+        </div>
+        <div class="col-auto">
+          <button mat-icon-button (click)="loadOccasion(occasion.id)">
+            <mat-icon>refresh</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="organizationForm"
+      (ngSubmit)="allocateSpot(organizationForm.value.spot, organizationForm.value.exhibitor)">
+      <div class="row">
+        <div class="col">
+          <mat-select i18n-placeholder="@@organization-spot" placeholder="Spot" formControlName="spot" required>
+            <mat-option *ngFor="let spot of freeSpots" [value]="spot">
+              {{spot.number}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="organizationForm.controls['spot'].hasError('required')">
+            <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+          </mat-error>
+        </div>
+        <div class="col-auto">
+          <button mat-icon-button type="submit" [disabled]="organizationForm.pristine || !organizationForm.valid">
+            <mat-icon>link</mat-icon>
+          </button>
+        </div>
+        <div class="col">
+          <mat-select i18n-placeholder="@@organization-exhibitor" placeholder="Exhibitor" formControlName="exhibitor"
+            required>
+            <mat-option *ngFor="let exhibitor of freeExhibitors" [value]="exhibitor">
+              {{exhibitor.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="organizationForm.controls['exhibitor'].hasError('required')">
+            <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+          </mat-error>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div *ngFor="let spot of allocatedSpots" class="col-sm-6 col-md-4 col-lg-3">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <div class="row">
+                <div class="col">
+                  {{spot.assignedExhibitor.name}}
+                </div>
+                <div class="col-auto">
+                  <button mat-icon-button (click)="freeSpot(spot)">
+                    <mat-icon>link_off</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{spot.number}}
+            </mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

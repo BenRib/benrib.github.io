@@ -1,0 +1,19 @@
+$menu-height:60px;
+
+app-menu {
+    height: $menu-height;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    position: relative;
+    top: $menu-height;
+}

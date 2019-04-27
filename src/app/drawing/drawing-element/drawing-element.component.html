@@ -1,0 +1,5 @@
+<div class="drawing-element-frame" cdkDrag [cdkDragDisabled]="!element.isEditable"
+  [ngClass]="{'selectable': element.isSelectable}"
+  [ngStyle]="{'width': getInPixels(element.width), 'height': getInPixels(element.height), 'resize': element.isEditable ? 'both' : 'none', 'left': getInPixels(element.positionX), 'top': getInPixels(element.positionY)}">
+  <span>{{element.content}}</span>
+</div>

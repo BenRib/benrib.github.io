@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: #fafafa }
+
+table {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.m-s {
+    margin: 1em;
+}
+
+.m-s-top {
+    margin-top: 1em;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+div.mat-card-header-text {
+    width: 100%;
+    margin: 0px;
+}
+
+mat-card {
+    margin-top: 1em;
+}

@@ -1,0 +1,10 @@
+.permission-row {
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.role-row {
+    @extend .permission-row;
+    justify-content: center;
+}

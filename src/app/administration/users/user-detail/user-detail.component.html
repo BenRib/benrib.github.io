@@ -1,0 +1,72 @@
+<form [formGroup]="userForm" (ngSubmit)="save(userForm.value)">
+  <mat-card>
+    <mat-card-content>
+      <div class="row col-12">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <mat-form-field>
+            <input matInput i18n-placeholder="@@user-firstName" placeholder="First Name" formControlName="firstName"
+              required>
+            <mat-error *ngIf="userForm.controls['firstName'].hasError('required')">
+              <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <mat-form-field>
+            <input matInput i18n-placeholder="@@user-lastName" placeholder="Last Name" formControlName="lastName"
+              required>
+            <mat-error *ngIf="userForm.controls['lastName'].hasError('required')">
+              <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <mat-form-field>
+            <mat-select i18n-placeholder="@@user-role" placeholder="Role" formControlName="role"
+              [compareWith]="compareRoles" required>
+              <mat-option *ngFor="let role of roles$ | async" [value]="role">
+                {{role.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="userForm.controls['role'].hasError('required')">
+              <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <mat-form-field>
+            <input matInput i18n-placeholder="@@user-email" placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="userForm.controls['email'].hasError('required')">
+              <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+            </mat-error>
+            <mat-error *ngIf="userForm.controls['email'].hasError('email')">
+              <ng-container i18n="@@errorMessage-email">Invalid email address</ng-container>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <mat-form-field>
+            <input matInput i18n-placeholder="@@user-login" placeholder="Login" formControlName="login" required>
+            <mat-error *ngIf="userForm.controls['login'].hasError('required')">
+              <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+          <mat-checkbox i18n="@@user-isActive" formControlName="isActive">Active</mat-checkbox>
+        </div>
+      </div>
+      <div class="row col-12">
+        <button mat-button type="submit" [disabled]="userForm.pristine || !userForm.valid">
+          <mat-icon>save</mat-icon>
+        </button>
+        <button mat-button type="reset" (click)="cancel()">
+          <mat-icon>cancel</mat-icon>
+        </button>
+        <button *ngIf="userForm.value.id !== null" mat-button type="button" (click)="delete(userForm.value)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

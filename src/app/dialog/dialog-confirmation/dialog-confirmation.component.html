@@ -1,0 +1,14 @@
+<h2 matDialogTitle>
+  <app-dialog-messages [tag]="options.titleTag"></app-dialog-messages>
+</h2>
+<mat-dialog-content>
+  <app-dialog-messages [tag]="options.contentTag"></app-dialog-messages>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-icon-button (click)="onSelect(options.option1)">
+    <mat-icon>{{options.option1}}</mat-icon>
+  </button>
+  <button mat-icon-button (click)="onSelect(options.option2)">
+    <mat-icon>{{options.option2}}</mat-icon>
+  </button>
+</mat-dialog-actions>

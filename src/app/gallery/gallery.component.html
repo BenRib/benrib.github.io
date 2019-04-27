@@ -1,0 +1,14 @@
+<div *ngFor="let occasion of occasions$ | async">
+  <mat-card class="col-12">
+    <mat-card-header>
+      <mat-card-title>{{occasion.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-auto" *ngFor="let image of occasion.images">
+          <img [src]="image.url">
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

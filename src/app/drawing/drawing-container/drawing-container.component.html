@@ -1,0 +1,8 @@
+<div
+  [ngStyle]="{'width': getInPixels(container.width), 'height': getInPixels(container.height), 'resize': container.isEditable ? 'both' : 'none'}">
+  <div class="drawing-container-frame" cdkDropList cdkDragBoundary style="height: 100%; width: 100%">
+    <div *ngFor="let element of container.elements">
+      <app-drawing-element [element]="element"></app-drawing-element>
+    </div>
+  </div>
+</div>

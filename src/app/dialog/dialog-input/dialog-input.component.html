@@ -1,0 +1,19 @@
+<h2 matDialogTitle>
+  <app-dialog-messages [tag]="options.titleTag"></app-dialog-messages>
+</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>
+      <app-dialog-messages [tag]="options.placeholderTag"></app-dialog-messages>
+    </mat-label>
+    <input matInput required="true" [(ngModel)]="inputValue" (keyup.enter)="ok()">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button mat-icon-button (click)="ok()">
+    <mat-icon>check</mat-icon>
+  </button>
+  <button mat-icon-button (click)="cancel()">
+    <mat-icon>cancel</mat-icon>
+  </button>
+</mat-dialog-actions>
