@@ -42,7 +42,7 @@
                 }
               ],
               "outputPath": "dist/en/",
-              "baseHref": "/en/",
+              "baseHref": "/dist/en/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -68,7 +68,7 @@
                 }
               ],
               "outputPath": "dist/fr/",
-              "baseHref": "/fr/",
+              "baseHref": "/dist/fr/",
               "i18nFile": "src/locale/messages.fr.xlf",
               "i18nFormat": "xlf2",
               "i18nLocale": "fr",
