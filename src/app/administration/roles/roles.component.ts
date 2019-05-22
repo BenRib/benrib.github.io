@@ -3,6 +3,7 @@ import { filter, switchMap } from 'rxjs/operators';
 import { Role } from '../administration.model';
 import { RolesService } from './roles.service';
 import { DialogService } from '../../dialog/dialog.service';
+import { TextInput } from 'src/app/dynamic-form/dynamic-form.model';
 
 @Component({
   selector: 'app-roles',
@@ -37,21 +38,27 @@ export class RolesComponent implements OnInit {
   }
 
   addRole(): void {
-    this.dialogService.input('message-add-role', 'message-role-name')
-      .pipe(filter(name => name !== undefined))
-      .pipe(switchMap((name: string) => {
+    let inputs = [
+      new TextInput({ key: 'name', i18nTag: 'input-role-name', required: true })
+    ];
+    this.dialogService.input('message-add-role', null, inputs)
+      .pipe(filter(r => r))
+      .pipe(switchMap((r: { name: string }) => {
         let role = new Role();
-        role.name = name;
+        role.name = r.name;
         return this.service.save(role);
       }))
       .subscribe(r => this.ngOnInit());
   }
 
   updateRole(role: Role): void {
-    this.dialogService.input('message-update-role', 'message-role-name', role.name)
-      .pipe(filter(name => name !== undefined))
-      .pipe(switchMap((name: string) => {
-        role.name = name;
+    let inputs = [
+      new TextInput({ key: 'name', i18nTag: 'input-role-name', required: true, value: role.name })
+    ];
+    this.dialogService.input('message-update-role', null, inputs)
+      .pipe(filter(r => r))
+      .pipe(switchMap((r: { name: string }) => {
+        role.name = r.name;
         return this.service.save(role);
       }))
       .subscribe(r => this.ngOnInit());

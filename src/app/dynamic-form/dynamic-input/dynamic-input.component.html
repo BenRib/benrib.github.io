@@ -1,0 +1,36 @@
+<div [formGroup]="form" [ngSwitch]="input.controlType">
+    <mat-form-field *ngSwitchCase="'textbox'">
+        <mat-label>
+            <app-input-message [tag]="input.i18nTag"></app-input-message>
+        </mat-label>
+        <input matInput [formControlName]="input.key" [required]="input.required">
+        <mat-error *ngIf="form.controls[input.key].hasError('required')">
+            <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field *ngSwitchCase="'textarea'">
+        <mat-label>
+            <app-input-message [tag]="input.i18nTag"></app-input-message>
+        </mat-label>
+        <textarea *ngSwitchCase="'textarea'" matInput [formControlName]="input.key" [rows]="input.displayLines"
+            [required]="input.required">
+            </textarea>
+        <mat-error *ngIf="form.controls[input.key].hasError('required')">
+            <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+        </mat-error>
+    </mat-form-field>
+    <mat-checkbox *ngSwitchCase="'checkbox'" [formControlName]="input.key">
+        <app-input-message [tag]="input.i18nTag"></app-input-message>
+    </mat-checkbox>
+    <mat-form-field *ngSwitchCase="'select'">
+        <mat-label>
+            <app-input-message [tag]="input.i18nTag"></app-input-message>
+        </mat-label>
+        <mat-select matInput [formControlName]="input.key" [required]="input.required">
+            <mat-option *ngFor="let option of input.options" [value]="option.value">{{option.label}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.controls[input.key].hasError('required')">
+            <ng-container i18n="@@errorMessage-required">Required information</ng-container>
+        </mat-error>
+    </mat-form-field>
+</div>

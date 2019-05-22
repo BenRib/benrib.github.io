@@ -1,0 +1,5 @@
+<form [formGroup]="form">
+    <div *ngFor="let input of inputs">
+        <app-dynamic-input [input]="input" [form]="form"></app-dynamic-input>
+    </div>
+</form>

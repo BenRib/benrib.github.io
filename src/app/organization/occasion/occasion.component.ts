@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { pipe } from 'rxjs';
+import { flatMap, filter } from 'rxjs/operators';
 
 import { OrganizationService } from '../organization.service';
 import { Occasion, Spot, Exhibitor } from '../organization.model';
+import { DialogService } from 'src/app/dialog/dialog.service';
+import { SelectInput, SelectInputOption } from 'src/app/dynamic-form/dynamic-form.model';
 
 @Component({
   selector: 'app-occasion',
@@ -11,63 +14,62 @@ import { Occasion, Spot, Exhibitor } from '../organization.model';
   styleUrls: ['./occasion.component.scss']
 })
 export class OccasionComponent implements OnInit {
-  organizationForm = this.fb.group({
-    spot: [null, Validators.required],
-    exhibitor: [null, Validators.required]
-  });
-
   occasion: Occasion;
-  allocatedSpots: Spot[];
-  freeSpots: Spot[];
-  exhibitors: Exhibitor[];
-  freeExhibitors: Exhibitor[];
+  filteredSpots: Spot[] = [];
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private service: OrganizationService) { }
+  _filter: string;
+  get filter(): string {
+    return this._filter;
+  }
+  set filter(value: string) {
+    this._filter = value ? value.trim() : undefined;
+    this.applyFilter();
+  }
+
+  constructor(private route: ActivatedRoute, private service: OrganizationService, private dialogService: DialogService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(p => this.loadOccasion(parseInt(p.get('id'))));
   }
 
   loadOccasion(occasionId: number): void {
-    this.reset();
     this.service.getOccasionById(occasionId).subscribe(r => {
       this.occasion = r;
-      this.setSpots(r.blueprint.elements.map(e => <Spot>e));
-    });
-    this.service.getExhibitors().subscribe(r => {
-      this.exhibitors = r;
-      if (this.freeSpots) {
-        this.setExhibitors();
-      }
+      this.resetFilter();
     });
   }
 
-  allocateSpot(spot: Spot, exhibitor: Exhibitor): void {
-    this.service.allocate(this.occasion.id, spot.number, exhibitor.id).subscribe(r => this.loadOccasion(this.occasion.id));
+  allocateSpot(spot: Spot): void {
+    this.service.getExhibitors()
+      .pipe(flatMap(r => {
+        let options = r.map(e => new SelectInputOption(`${e.id}`, e.name));
+        let value = spot.assignedExhibitor ? `${spot.assignedExhibitor.id}` : null;
+        let inputs = [new SelectInput({ key: 'exhibitor', i18nTag: 'input-select-exhibitor', value: value, options: options })];
+        return this.dialogService.input(null, null, inputs);
+      }))
+      .pipe(filter(r => r))
+      .pipe(flatMap((r: { exhibitor: string }) => this.service.allocate(this.occasion.id, spot.number, parseInt(r.exhibitor))))
+      .subscribe(r => this.loadOccasion(this.occasion.id));
   }
 
   freeSpot(spot: Spot): void {
     this.service.free(this.occasion.id, spot.number).subscribe(r => this.loadOccasion(this.occasion.id));
   }
 
-  reset(): void {
-    this.organizationForm.reset();
-    this.allocatedSpots = [];
-    this.freeSpots = [];
-    this.exhibitors = [];
-  }
+  applyFilter(): void {
+    let spots = this.occasion.blueprint.elements
+      .filter(e => e instanceof Spot)
+      .map(e => <Spot>e);
 
-  private setSpots(spots: Spot[]): void {
-    this.allocatedSpots = spots.filter(s => s.assignedExhibitorId !== undefined && s.assignedExhibitorId !== null).sort((s1, s2) => s1.number < s2.number ? -1 : 1);
-    this.freeSpots = spots.filter(s => s.assignedExhibitorId === undefined || s.assignedExhibitorId === null).sort((s1, s2) => s1.number < s2.number ? -1 : 1);
-
-    if (this.exhibitors) {
-      this.setExhibitors();
+    if (this.filter && this.filter !== '') {
+      spots = spots.filter(s => `${s.number}`.includes(this.filter) || (s.assignedExhibitor && s.assignedExhibitor.name.includes(this.filter)));
     }
+
+    this.filteredSpots = spots;
   }
 
-  private setExhibitors(): void {
-    this.freeExhibitors = this.exhibitors.filter(e => this.allocatedSpots.every(s => s.assignedExhibitorId !== e.id)).sort((e1, e2) => e1.name.localeCompare(e2.name));
-    this.allocatedSpots.forEach(s => s.assignedExhibitor = this.exhibitors.find(e => e.id === s.assignedExhibitorId));
+  resetFilter(): void {
+    this.filter = undefined;
+    this.applyFilter();
   }
 }

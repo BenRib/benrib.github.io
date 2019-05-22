@@ -7,6 +7,7 @@ import { DialogService } from './dialog.service';
 import { DialogInputComponent } from './dialog-input/dialog-input.component';
 import { DialogConfirmationComponent } from './dialog-confirmation/dialog-confirmation.component';
 import { DialogMessagesComponent } from './dialog-messages/dialog-messages.component';
+import { DynamicFormModule } from '../dynamic-form/dynamic-form.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DialogMessagesComponent } from './dialog-messages/dialog-messages.compo
   imports: [
     CommonModule,
     FormsModule,
+    DynamicFormModule,
     MatButtonModule,
     MatDialogModule,
     MatIconModule,

@@ -6,37 +6,6 @@ import { Occasion, Exhibitor, Spot } from './organization.model';
 
 @Injectable()
 export class OrganizationService {
-    private spots: Spot[] = [
-        {
-            number: 1,
-            assignedExhibitorId: 1,
-            assignedExhibitor: null
-        },
-        {
-            number: 2,
-            assignedExhibitorId: 2,
-            assignedExhibitor: null
-        },
-        {
-            number: 3,
-            assignedExhibitorId: null,
-            assignedExhibitor: null
-        },
-        {
-            number: 4,
-            assignedExhibitorId: null,
-            assignedExhibitor: null
-        },
-        {
-            number: 5,
-            assignedExhibitorId: null,
-            assignedExhibitor: null
-        }
-    ];
-    private occasions: Occasion[] = [
-        { id: 0, name: '2018', blueprint: { elements: [] } },
-        { id: 1, name: '2019', blueprint: { elements: [this.spots[0], this.spots[1], this.spots[2], this.spots[3], this.spots[4]] } }
-    ];
     private exhibitors: Exhibitor[] = [
         { id: 0, name: 'painter' },
         { id: 1, name: 'sculptor' },
@@ -45,8 +14,35 @@ export class OrganizationService {
         { id: 4, name: 'artist' },
         { id: 5, name: 'singer' }
     ];
+    private occasions: Occasion[] = [];
 
-    constructor(httpClient: HttpClient) { }
+    constructor(httpClient: HttpClient) {
+        let spots: Spot[] = [];
+        let spot = new Spot();
+        spot.number = 1;
+        spot.assignedExhibitorId = 1;
+        spot.assignedExhibitor = this.exhibitors[1];
+        spots.push(spot);
+        spot = new Spot();
+        spot.number = 2;
+        spot.assignedExhibitorId = 2;
+        spot.assignedExhibitor = this.exhibitors[2];
+        spots.push(spot);
+        spot = new Spot();
+        spot.number = 3;
+        spots.push(spot);
+        spot = new Spot();
+        spot.number = 4;
+        spots.push(spot);
+        spot = new Spot();
+        spot.number = 5;
+        spots.push(spot);
+
+        this.occasions = [
+            { id: 0, name: '2018', blueprint: { elements: [] } },
+            { id: 1, name: '2019', blueprint: { elements: [spots[0], spots[1], spots[2], spots[3], spots[4]] } }
+        ];
+    }
 
     getOccasions(): Observable<Occasion[]> {
         return of(this.occasions);
@@ -67,6 +63,7 @@ export class OrganizationService {
             let spot = <Spot>this.occasions[occasionIndex].blueprint.elements.find(e => (<Spot>e).number == spotNumber);
             if (spot) {
                 spot.assignedExhibitorId = exhibitorId;
+                spot.assignedExhibitor = this.exhibitors.find(e => e.id === exhibitorId);
             }
         }
 
@@ -79,6 +76,7 @@ export class OrganizationService {
             let spot = <Spot>this.occasions[occasionIndex].blueprint.elements.find(e => (<Spot>e).number == spotNumber);
             if (spot) {
                 spot.assignedExhibitorId = null;
+                spot.assignedExhibitor = null;
             }
         }
 
