@@ -150,8 +150,9 @@
         <note category="location">app/administration/users/user-detail/user-detail.component.html:32</note>
         <note category="location">app/administration/users/user-detail/user-detail.component.html:40</note>
         <note category="location">app/administration/users/user-detail/user-detail.component.html:51</note>
-        <note category="location">app/organization/occasion/occasion.component.html:27</note>
-        <note category="location">app/organization/occasion/occasion.component.html:43</note>
+        <note category="location">app/dynamic-form/dynamic-input/dynamic-input.component.html:8</note>
+        <note category="location">app/dynamic-form/dynamic-input/dynamic-input.component.html:19</note>
+        <note category="location">app/dynamic-form/dynamic-input/dynamic-input.component.html:33</note>
       </notes>
       <segment>
         <source>Required information</source>
@@ -225,6 +226,7 @@
       <notes>
         <note category="location">app/administration/exhibitors/exhibitors.component.html:6</note>
         <note category="location">app/administration/users/users.component.html:6</note>
+        <note category="location">app/organization/occasion/occasion.component.html:19</note>
       </notes>
       <segment>
         <source>Filter</source>
@@ -409,6 +411,24 @@
       <segment>
         <source>Exhibitor</source>
         <target>Exposant</target>
+      </segment>
+    </unit>
+    <unit id="input-role-name">
+      <notes>
+        <note category="location">app/dynamic-form/input-message/input-message.component.html:1,2</note>
+      </notes>
+      <segment>
+        <source>Name</source>
+        <target>Nom</target>
+      </segment>
+    </unit>
+    <unit id="input-select-exhibitor">
+      <notes>
+        <note category="location">app/dynamic-form/input-message/input-message.component.html:3,4</note>
+      </notes>
+      <segment>
+        <source>Select an exhibitor</source>
+        <target>Selectionnez un exposant</target>
       </segment>
     </unit>
   </file>
