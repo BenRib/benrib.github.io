@@ -11,15 +11,15 @@ const routes: Routes = [
   },
   {
     path: 'administration',
-    loadChildren: './administration/administration.module#AdministrationModule'
+    loadChildren: () => import('./administration/administration.module').then(m => m.AdministrationModule)
   },
   {
     path: 'organization',
-    loadChildren: './organization/organization.module#OrganizationModule'
+    loadChildren: () => import('./organization/organization.module').then(m => m.OrganizationModule)
   },
   {
     path: 'gallery',
-    loadChildren: './gallery/gallery.module#GalleryModule'
+    loadChildren: () => import('./gallery/gallery.module').then(m => m.GalleryModule)
   },
   {
     path: '**',

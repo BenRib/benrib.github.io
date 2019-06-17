@@ -11,8 +11,8 @@ import { ExhibitorsService } from './exhibitors.service';
   styleUrls: ['./exhibitors.component.scss']
 })
 export class ExhibitorsComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   displayedColumns: string[] = ['name', 'isActive'];
   dataSource: MatTableDataSource<Exhibitor>;
