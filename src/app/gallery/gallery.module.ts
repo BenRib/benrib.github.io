@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GalleryComponent } from './gallery.component';
 import { GalleryRoutingModule } from './gallery.routing';
 import { GalleryService } from './gallery.service';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [GalleryComponent],
