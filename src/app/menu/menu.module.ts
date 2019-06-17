@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule, MatMenuModule, MatIconModule } from '@angular/material';
 
+import { AuthorizationModule } from '../authorization/authorization.module';
 import { MenuComponent } from './menu.component';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
     RouterModule,
     MatButtonModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    AuthorizationModule
   ],
   declarations: [
     MenuComponent

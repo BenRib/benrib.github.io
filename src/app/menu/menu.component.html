@@ -1,20 +1,35 @@
 <div class="row justify-content-center">
   <button mat-button routerLink="/" routerLinkActive="active" i18n="@@menu-home">Home</button>
   <button mat-button routerLink="/gallery" routerLinkActive="active" i18n="@@menu-gallery">Gallery</button>
-  <button mat-button routerLink="/organization" routerLinkActive="active"
-    i18n="@@menu-organization">Organization</button>
-  <button mat-button routerLinkActive="active" [matMenuTriggerFor]="administrationMenu"
-    i18n="@@menu-administration">Administration</button>
+  <button mat-button routerLink="/organization" routerLinkActive="active" i18n="@@menu-organization"
+    *ngIfPermissions="'SpotCanAssign'">Organization</button>
+  <button mat-button routerLinkActive="active" [matMenuTriggerFor]="administrationMenu" i18n="@@menu-administration"
+    *ngIfPermissions="['OccasionsCanRead','ExhibitorsCanRead','RolesCanRead','UsersCanRead']">Administration</button>
   <mat-menu #administrationMenu="matMenu">
-    <button mat-menu-item routerLink="/administration/occasions" i18n="@@menu-occasions">Occasions</button>
-    <button mat-menu-item routerLink="/administration/exhibitors" i18n="@@menu-exhibitors">Exhibitors</button>
-    <button mat-menu-item routerLink="/administration/roles" i18n="@@menu-roles">Roles</button>
-    <button mat-menu-item routerLink="/administration/users" i18n="@@menu-users">Users</button>
+    <button mat-menu-item routerLink="/administration/occasions" i18n="@@menu-occasions"
+      *ngIfPermissions="'OccasionsCanRead'">Occasions</button>
+    <button mat-menu-item routerLink="/administration/exhibitors" i18n="@@menu-exhibitors"
+      *ngIfPermissions="'ExhibitorsCanRead'">Exhibitors</button>
+    <button mat-menu-item routerLink="/administration/roles" i18n="@@menu-roles"
+      *ngIfPermissions="'RolesCanRead'">Roles</button>
+    <button mat-menu-item routerLink="/administration/users" i18n="@@menu-users"
+      *ngIfPermissions="'UsersCanRead'">Users</button>
   </mat-menu>
   <button mat-button [matMenuTriggerFor]="languageMenu">{{currentLanguage}}</button>
   <mat-menu #languageMenu="matMenu">
     <button mat-menu-item *ngFor="let language of supportedLanguages" (click)="changeLanguage(language)">{{language}}
       <mat-icon *ngIf="language === currentLanguage">check</mat-icon>
     </button>
+  </mat-menu>
+  <button mat-button *ngIf="!authenticationService.identifiedPerson" routerLink="/login">
+    <mat-icon>person</mat-icon>
+  </button>
+  <button mat-button *ngIf="authenticationService.identifiedPerson" routerLinkActive="active"
+    [matMenuTriggerFor]="personMenu">
+    <mat-icon>person</mat-icon>
+  </button>
+  <mat-menu #personMenu="matMenu">
+    <button mat-menu-item i18n="@@menu-resetPassword" routerLink="/reset-password">Reset Password</button>
+    <button mat-menu-item i18n="@@menu-logout" (click)="logout()">Log out</button>
   </mat-menu>
 </div>

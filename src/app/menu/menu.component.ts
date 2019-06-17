@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   supportedLanguages: string[] = ['EN', 'FR'];
   currentLanguage: string;
+
+  constructor(public authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
     let segments = this.getUrlSegments();
@@ -24,6 +28,11 @@ export class MenuComponent implements OnInit {
     segments[languageIndex] = language.toLowerCase();
     let url = segments.join('/');
     window.location.href = url;
+  }
+
+  logout(): void {
+    this.authenticationService.logout();
+    this.router.navigate(['login']);
   }
 
   private getUrlSegments(): string[] {
