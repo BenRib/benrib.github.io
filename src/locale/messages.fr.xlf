@@ -39,7 +39,7 @@
     </unit>
     <unit id="menu-occasions">
       <notes>
-        <note category="location">app/menu/menu.component.html:9</note>
+        <note category="location">app/menu/menu.component.html:10</note>
       </notes>
       <segment>
         <source>Occasions</source>
@@ -48,7 +48,7 @@
     </unit>
     <unit id="menu-exhibitors">
       <notes>
-        <note category="location">app/menu/menu.component.html:10</note>
+        <note category="location">app/menu/menu.component.html:12</note>
       </notes>
       <segment>
         <source>Exhibitors</source>
@@ -57,7 +57,7 @@
     </unit>
     <unit id="menu-roles">
       <notes>
-        <note category="location">app/menu/menu.component.html:11</note>
+        <note category="location">app/menu/menu.component.html:14</note>
       </notes>
       <segment>
         <source>Roles</source>
@@ -66,11 +66,110 @@
     </unit>
     <unit id="menu-users">
       <notes>
-        <note category="location">app/menu/menu.component.html:12</note>
+        <note category="location">app/menu/menu.component.html:16</note>
       </notes>
       <segment>
         <source>Users</source>
         <target>Utilisateurs</target>
+      </segment>
+    </unit>
+    <unit id="menu-resetPassword">
+      <notes>
+        <note category="location">app/menu/menu.component.html:32</note>
+      </notes>
+      <segment>
+        <source>Reset Password</source>
+        <target>Réinitialiser mot de passe</target>
+      </segment>
+    </unit>
+    <unit id="menu-logout">
+      <notes>
+        <note category="location">app/menu/menu.component.html:33</note>
+      </notes>
+      <segment>
+        <source>Log out</source>
+        <target>Déconnexion</target>
+      </segment>
+    </unit>
+    <unit id="login-login">
+      <notes>
+        <note category="location">app/authentication/login/login.component.html:6</note>
+      </notes>
+      <segment>
+        <source>Login</source>
+        <target>Connexion</target>
+      </segment>
+    </unit>
+    <unit id="errorMessage-required">
+      <notes>
+        <note category="location">app/authentication/login/login.component.html:8</note>
+        <note category="location">app/authentication/login/login.component.html:17</note>
+        <note category="location">app/authentication/reset-password/reset-password.component.html:9</note>
+        <note category="location">app/authentication/reset-password/reset-password.component.html:18</note>
+        <note category="location">app/authentication/reset-password/reset-password.component.html:27</note>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:11</note>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:22</note>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:33</note>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:42</note>
+        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:51</note>
+        <note category="location">app/administration/exhibitors/exhibitor-detail/exhibitor-detail.component.html:9</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:10</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:19</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:32</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:40</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:51</note>
+        <note category="location">app/dynamic-form/dynamic-input/dynamic-input.component.html:8</note>
+        <note category="location">app/dynamic-form/dynamic-input/dynamic-input.component.html:19</note>
+        <note category="location">app/dynamic-form/dynamic-input/dynamic-input.component.html:33</note>
+      </notes>
+      <segment>
+        <source>Required information</source>
+        <target>Information requise</target>
+      </segment>
+    </unit>
+    <unit id="login-password">
+      <notes>
+        <note category="location">app/authentication/login/login.component.html:14</note>
+      </notes>
+      <segment>
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </segment>
+    </unit>
+    <unit id="login-forgotPassword">
+      <notes>
+        <note category="location">app/authentication/login/login.component.html:24</note>
+      </notes>
+      <segment>
+        <source>Forgot password?</source>
+        <target>Mot de passe oublié ?</target>
+      </segment>
+    </unit>
+    <unit id="resetPassword-old">
+      <notes>
+        <note category="location">app/authentication/reset-password/reset-password.component.html:6</note>
+      </notes>
+      <segment>
+        <source>Old password</source>
+        <target>Ancien mot de passe</target>
+      </segment>
+    </unit>
+    <unit id="resetPassword-new">
+      <notes>
+        <note category="location">app/authentication/reset-password/reset-password.component.html:15</note>
+      </notes>
+      <segment>
+        <source>New password</source>
+        <target>Nouveau mot de passe</target>
+      </segment>
+    </unit>
+    <unit id="resetPassword-confirmation">
+      <notes>
+        <note category="location">app/authentication/reset-password/reset-password.component.html:24</note>
+      </notes>
+      <segment>
+        <source>Confirm password</source>
+        <target>Confirmation mot de passe</target>
       </segment>
     </unit>
     <unit id="welcomeMessage">
@@ -135,28 +234,6 @@
       <segment>
         <source>Name</source>
         <target>Nom</target>
-      </segment>
-    </unit>
-    <unit id="errorMessage-required">
-      <notes>
-        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:11</note>
-        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:22</note>
-        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:33</note>
-        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:42</note>
-        <note category="location">app/administration/occasions/occasion-detail/occasion-detail.component.html:51</note>
-        <note category="location">app/administration/exhibitors/exhibitor-detail/exhibitor-detail.component.html:9</note>
-        <note category="location">app/administration/users/user-detail/user-detail.component.html:10</note>
-        <note category="location">app/administration/users/user-detail/user-detail.component.html:19</note>
-        <note category="location">app/administration/users/user-detail/user-detail.component.html:32</note>
-        <note category="location">app/administration/users/user-detail/user-detail.component.html:40</note>
-        <note category="location">app/administration/users/user-detail/user-detail.component.html:51</note>
-        <note category="location">app/dynamic-form/dynamic-input/dynamic-input.component.html:8</note>
-        <note category="location">app/dynamic-form/dynamic-input/dynamic-input.component.html:19</note>
-        <note category="location">app/dynamic-form/dynamic-input/dynamic-input.component.html:33</note>
-      </notes>
-      <segment>
-        <source>Required information</source>
-        <target>Information requise</target>
       </segment>
     </unit>
     <unit id="occasion-start">
@@ -235,6 +312,7 @@
     </unit>
     <unit id="exhibitor-name">
       <notes>
+        <note category="location">app/administration/exhibitors/exhibitors.component.html:14</note>
         <note category="location">app/administration/exhibitors/exhibitor-detail/exhibitor-detail.component.html:7</note>
       </notes>
       <segment>
@@ -244,6 +322,7 @@
     </unit>
     <unit id="exhibitor-isActive">
       <notes>
+        <note category="location">app/administration/exhibitors/exhibitors.component.html:18</note>
         <note category="location">app/administration/exhibitors/exhibitor-detail/exhibitor-detail.component.html:14</note>
       </notes>
       <segment>
@@ -253,6 +332,7 @@
     </unit>
     <unit id="user-firstName">
       <notes>
+        <note category="location">app/administration/users/users.component.html:14</note>
         <note category="location">app/administration/users/user-detail/user-detail.component.html:7</note>
       </notes>
       <segment>
@@ -262,11 +342,22 @@
     </unit>
     <unit id="user-lastName">
       <notes>
+        <note category="location">app/administration/users/users.component.html:18</note>
         <note category="location">app/administration/users/user-detail/user-detail.component.html:16</note>
       </notes>
       <segment>
         <source>Last Name</source>
         <target>Nom</target>
+      </segment>
+    </unit>
+    <unit id="user-isActive">
+      <notes>
+        <note category="location">app/administration/users/users.component.html:22</note>
+        <note category="location">app/administration/users/user-detail/user-detail.component.html:56</note>
+      </notes>
+      <segment>
+        <source>Active</source>
+        <target>Actif</target>
       </segment>
     </unit>
     <unit id="user-role">
@@ -303,15 +394,6 @@
       <segment>
         <source>Login</source>
         <target>Login</target>
-      </segment>
-    </unit>
-    <unit id="user-isActive">
-      <notes>
-        <note category="location">app/administration/users/user-detail/user-detail.component.html:56</note>
-      </notes>
-      <segment>
-        <source>Active</source>
-        <target>Actif</target>
       </segment>
     </unit>
     <unit id="message-confirmation-title">
@@ -393,24 +475,6 @@
       <segment>
         <source>Update Role</source>
         <target>Mise à jour Rôle</target>
-      </segment>
-    </unit>
-    <unit id="organization-spot">
-      <notes>
-        <note category="location">app/organization/occasion/occasion.component.html:21</note>
-      </notes>
-      <segment>
-        <source>Spot</source>
-        <target>Emplacement</target>
-      </segment>
-    </unit>
-    <unit id="organization-exhibitor">
-      <notes>
-        <note category="location">app/organization/occasion/occasion.component.html:36</note>
-      </notes>
-      <segment>
-        <source>Exhibitor</source>
-        <target>Exposant</target>
       </segment>
     </unit>
     <unit id="input-role-name">
