@@ -13,7 +13,7 @@ export class AuthorizationService {
   }
 
   hasPermission(permission: string): boolean {
-    return this.authenticationService.identifiedPerson !== null;
+    return this.authenticationService.identifiedPerson !== undefined && this.authenticationService.identifiedPerson !== null;
   }
 
   hasPermissionToNavigate(route: string): boolean {
